@@ -2,7 +2,7 @@
  * @Author: qwelz
  * @Date: 2020-07-24 20:30:58
  * @LastEditors: qwelz
- * @LastEditTime: 2020-07-24 20:30:58
+ * @LastEditTime: 2020-07-24 20:48:13
 --> 
 
 <!--
@@ -12,10 +12,10 @@
  * @LastEditTime: 2020-07-24 20:30:03
 --> 
 
-# python-chrome
+# python-chrome:ubuntu-python36
 
-* 用于日常爬虫开发使用，本人自用
-* 基于 python:3.8 官方镜像（该镜像基于 debain10）
+* 这是此前使用的版本，版本不够新
+* 基于 junyuuuu/python-selenium-chrome:1.0.3 构建
 * 时区改为 GMT+8，优化了 shell 的头部输出样式，添加了 pypi 的 aliyun 镜像
 
 # 集成环境
