@@ -18,9 +18,6 @@ RUN wget 'https://www.rarlab.com/rar/rarlinux-x64-5.9.1.tar.gz' \
 RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip \
     && unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
-# set display port to avoid crash
-ENV DISPLAY=:99
-
 # upgrade pip && install packages
 RUN pip install --upgrade pip \
     && pip install selenium requests aiohttp bs4 redis pymysql pyyaml 
@@ -28,3 +25,5 @@ RUN pip install --upgrade pip \
 # mirrors and change time zone to GMT+8
 COPY localization.sh .
 RUN chmod +x ./localization.sh && sh ./localization.sh && rm -f ./localization.sh
+
+ENV TZ=Asia/Shanghai
