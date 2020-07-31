@@ -2,7 +2,7 @@
  * @Author: qwelz
  * @Date: 2020-07-24 20:30:58
  * @LastEditors: qwelz
- * @LastEditTime: 2020-07-25 19:35:38
+ * @LastEditTime: 2020-07-31 23:53:16
 --> 
 
 <!--
@@ -34,6 +34,7 @@ docker run -d --shm-size=1G qwelz/python-chrome:latest tail -f /dev/null
 * `master` 分支，用于日常爬虫开发使用，本人自用
 * 基于 `python:3.8` 官方镜像（该镜像基于 `debain10`）
 * 时区改为 `GMT+8`，优化了 `shell` 的头部输出样式，添加了 `pypi` 的 `aliyun` 镜像
+* 安装中文字体 : fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy
 
 ### python-chrome:ubuntu-python36
 * `ubuntu-python36` 分支，这是此前使用的版本，版本不够新
@@ -51,6 +52,7 @@ google-chrome, chromedriver
 * axel
 
 ### python package
-* selenium requests aiohttp bs4 curlify
+* selenium requests aiohttp bs4 curlify brotlipy
 * redis pymysql 
-* pyyaml
+* pyyaml python-dateutil cffi
+* opencv-python imageio apng 
