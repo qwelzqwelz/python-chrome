@@ -12,15 +12,17 @@ RUN wget 'https://www.rarlab.com/rar/rarlinux-x64-5.9.1.tar.gz' \
     && tar -zxvf rarlinux-x64-5.9.1.tar.gz \
     && cd rar \
     && make \
+	&& cd .. \
     && rm -rf rar rarlinux-x64-5.9.1.tar.gz
 
 # install chromedriver
 RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip \
-    && unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
+    && unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/ \
+    && rm -f /tmp/chromedriver.zip
 
 # upgrade pip && install packages
 RUN pip install --upgrade pip \
-    && pip install selenium requests aiohttp bs4 redis pymysql pyyaml opencv-python imageio apng python-dateutil cffi \
+    && pip install selenium requests aiohttp bs4 redis pymysql pyyaml opencv-python imageio apng python-dateutil pillow cffi \
     && pip install brotlipy
 
 # mirrors and change time zone to GMT+8
