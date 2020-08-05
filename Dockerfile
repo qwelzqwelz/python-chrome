@@ -7,7 +7,11 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 RUN apt-get update && apt-get upgrade
 
 # apt install chrome and others
-RUN apt-get install -y google-chrome-stable git tree p7zip-full unzip tzdata axel fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy
+RUN apt-get install -y google-chrome-stable \
+    git tree p7zip-full unzip tzdata axel \
+    fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy \
+    wkhtmltopdf
+
 RUN wget 'https://www.rarlab.com/rar/rarlinux-x64-5.9.1.tar.gz' \
     && tar -zxvf rarlinux-x64-5.9.1.tar.gz \
     && cd rar \
@@ -22,7 +26,12 @@ RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`cu
 
 # upgrade pip && install packages
 RUN pip install --upgrade pip \
-    && pip install selenium requests aiohttp bs4 redis pymysql pyyaml opencv-python imageio apng python-dateutil pillow cffi \
+    && pip install \
+        cffi python-dateutil \
+        selenium requests aiohttp bs4 \
+        redis pymysql \
+        opencv-python imageio apng pillow \
+        pdfkit pyyaml \
     && pip install brotlipy
 
 # mirrors and change time zone to GMT+8
