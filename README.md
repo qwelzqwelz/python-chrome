@@ -2,14 +2,7 @@
  * @Author: qwelz
  * @Date: 2020-07-24 20:30:58
  * @LastEditors: qwelz
- * @LastEditTime: 2020-07-31 23:53:16
---> 
-
-<!--
- * @Author: qwelz
- * @Date: 2020-07-24 20:29:09
- * @LastEditors: qwelz
- * @LastEditTime: 2020-07-24 20:30:03
+ * @LastEditTime: 2020-08-20 20:37:14
 --> 
 
 # quick start
@@ -37,6 +30,7 @@ docker run -d --shm-size=1G qwelz/python-chrome:latest tail -f /dev/null
 * 安装中文字体 : fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy
 
 ### python-chrome:ubuntu-python36
+* 此分支已放弃维护
 * `ubuntu-python36` 分支，这是此前使用的版本，版本不够新
 * 基于 `junyuuuu/python-selenium-chrome:1.0.3` 构建
 
@@ -46,13 +40,21 @@ docker run -d --shm-size=1G qwelz/python-chrome:latest tail -f /dev/null
 google-chrome, chromedriver
 
 ### 常用工具
-* git 
+* git, vim
 * tree 
 * p7zip-full unzip rar
 * axel
+* wkhtmltopdf
+* xvfb
+* crontab rsyslog
+* rclone
+
+### 中文字体
+* fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy
 
 ### python package
-* selenium requests aiohttp bs4 curlify brotlipy
-* redis pymysql 
-* pyyaml python-dateutil cffi
-* opencv-python imageio apng 
+* cffi python-dateutil brotlipy
+* selenium requests aiohttp bs4 pyvirtualdisplay
+* redis pymysql
+* opencv-python imageio apng pillow
+* pdfkit pyyaml pyyaml-include
