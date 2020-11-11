@@ -18,7 +18,7 @@ RUN wget 'https://www.rarlab.com/rar/rarlinux-x64-5.9.1.tar.gz' \
     && tar -zxvf rarlinux-x64-5.9.1.tar.gz \
     && cd rar \
     && make \
-	&& cd .. \
+    && cd .. \
     && rm -rf rar rarlinux-x64-5.9.1.tar.gz
 
 # install rclone
@@ -33,12 +33,13 @@ RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`cu
 # upgrade pip && install packages
 RUN pip install --upgrade pip \
     && pip install \
-        cffi python-dateutil \
-        selenium requests aiohttp bs4 pyvirtualdisplay \
-        redis pymysql pyyaml-include \
-        opencv-python imageio apng pillow \
-        pdfkit pyyaml \
-    && pip install brotlipy
+    cffi python-dateutil \
+    selenium requests aiohttp bs4 pyvirtualdisplay \
+    redis pymysql pyyaml-include \
+    opencv-python imageio apng pillow \
+    pdfkit pyyaml \
+    && pip install brotlipy \
+    && pip install hyper mitmproxy m3u8 pycrypto 
 
 # mirrors and change time zone to GMT+8
 COPY localization.sh .
